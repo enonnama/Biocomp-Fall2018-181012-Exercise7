@@ -16,6 +16,15 @@ odddata <- data.frame(x=iris[odd==1, ]) # now make a data frame of the odd rows
 odddata
 ```
 
+Brittni: We wanted this in a function, but you have all the right parts. I have written a chunk below transforming your code into a function. (-0.5)
+```{r}
+returnOdd=function(dataFrame){
+  odd <- seq_len(nrow(dataFrame)) %% 2 # get the odd rows
+  odddata <- data.frame(x=dataFrame[odd==1, ]) # now make a data frame of the odd rows
+  return(odddata)
+ }
+```
+
 2. Repeat a subset of last week’s exercise, but write functions to accomplish these tasks.
 
 **Question 2:**
@@ -31,7 +40,7 @@ numspecies <- function(species){
   obs <- nrow(speciesiwant)
   return(obs)
 }
-species="setosa"
+species="setosa" #this is redundant based on how you executed numspecies. "numspecies(species)" would work also.
 numspecies(species="setosa")
 ```
 
